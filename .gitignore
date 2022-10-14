@@ -6,4 +6,8 @@ dist/
 .coverage
 coverage.xml
 .pytest_cache/
+<<<<<<< HEAD
 .vim
+=======
+.vim
+>>>>>>> b7e72fb (fixing gitignore)
