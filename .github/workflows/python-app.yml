@@ -13,40 +13,7 @@ permissions:
   contents: read
 
 jobs:
-  test:
-    strategy:
-      matrix:
-        platform: [ ubuntu-latest ]
-        node: [ '12' ]
-    name: test/node ${{ matrix.node }}/${{ matrix.platform }}
-    runs-on: ${{ matrix.platform }}
-    steps:
-    - uses: actions/checkout@main
-    - uses: actions/setup-node@main
-      with:
-        node-version: ${{ matrix.node }}
-    - run: npm install -g yarn
-    - run: yarn install
-    - run: yarn build
-    - run: yarn test
-  coverage:
-    needs: [ test ]
-    name: coverage
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@main
-    - uses: actions/setup-node@main
-      with:
-        node-version: '12'
-    - run: npm install -g yarn
-    - run: yarn install
-    - run: yarn build
-    - uses: paambaati/codeclimate-action@v2.2.4
-      env:
-        CC_TEST_REPORTER_ID: 04d27dfcd9bc0a1f3f0382aa1675175af47ffa4fce206e91372829061097f348
-      with:
-        coverageCommand: yarn coverage
-
+  
   build:
 
     runs-on: ubuntu-latest
