@@ -35,11 +35,4 @@ jobs:
     - name: Test with pytest
       run: |
         poetry run pytest
-    - name: Test coverage
-      uses: paambaati/codeclimate-action@v3.2.0
-      if: github.ref_name == 'main'
-      env:
-        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-      with:
-        coverageCommand: poetry run pytest --cov --cov-report xml
-        debug: true
+
