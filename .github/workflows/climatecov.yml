@@ -1,21 +1,16 @@
 name: Tests and lint
 on:
   - push
-  - pull_request
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        # we want to test our package on several versions of Python
-        python-version: [ "3.10" ]
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python 
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.10
         # make depends on poetry
       - name: Install dependencies
         run: |
@@ -29,9 +24,8 @@ jobs:
           poetry run pytest
       - name: Code Climate Coverage Action
         uses: paambaati/codeclimate-action@v3.2.0
-        if: github.ref_name == 'main'
         env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          CC_TEST_REPORTER_ID: 04d27dfcd9bc0a1f3f0382aa1675175af47ffa4fce206e91372829061097f348
         with:
           coverageCommand: poetry run pytest --cov=gendiff --cov-report xml
           debug: true
