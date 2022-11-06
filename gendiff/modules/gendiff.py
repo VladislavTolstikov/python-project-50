@@ -18,8 +18,12 @@ def generate_diff(file1, file2):
 
 def compare_dicts(dict1, dict2):
     result = []
-    dict1 = check_boolean(dict(sorted(dict1.items())))
-    dict2 = check_boolean(dict(sorted(dict2.items())))
+    dict1 = sorted(dict1.items)
+    dict2 = sorted(dict2.items)
+    dict1 = check_boolean(dict(dict1))
+    dict2 = check_boolean(dict(dict2))
+    # dict1 = check_boolean(dict(sorted(dict1.items())))
+    # dict2 = check_boolean(dict(sorted(dict2.items())))
     for i in dict1:
         if i not in dict2:
             result.append(f'  - {i}: {dict1[i]}')
