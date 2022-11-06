@@ -1,7 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/VladislavTolstikov/python-project-50/workflows/hexlet-check/badge.svg)](https://github.com/VladislavTolstikov/python-project-50/actions)
 
-[![Python application](https://github.com/VladislavTolstikov/python-project-50/actions/workflows/python-app.yml/badge.svg)](https://github.com/VladislavTolstikov/python-project-50/actions/workflows/python-app.yml)
+[![Linter](https://github.com/VladislavTolstikov/python-project-50/actions/workflows/pylint.yml/badge.svg)](https://github.com/VladislavTolstikov/python-project-50/actions/workflows/pylint.yml)
 
 <a href="https://codeclimate.com/github/VladislavTolstikov/python-project-50/maintainability"><img src="https://api.codeclimate.com/v1/badges/358d9578aac78a6e5a3f/maintainability" /></a>
 
