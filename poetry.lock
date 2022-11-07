@@ -168,6 +168,14 @@ pytest = ">=4.6"
 testing = ["fields", "hunter", "process-tests", "six", "pytest-xdist", "virtualenv"]
 
 [[package]]
+name = "pyyaml"
+version = "6.0"
+description = "YAML parser and emitter for Python"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "tomli"
 version = "2.0.1"
 description = "A lil' TOML parser"
@@ -178,7 +186,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "c7db54a9a8692e6e0b13bd6e1a0cafccc1675765dd122c870c837702eacc8399"
+content-hash = "a8465cacfa80f2f157f25628bb9972a7e5f9cffb438f174b68515cfc7cc1ec82"
 
 [metadata.files]
 attrs = []
@@ -205,4 +213,5 @@ pyparsing = [
 ]
 pytest = []
 pytest-cov = []
+pyyaml = []
 tomli = []

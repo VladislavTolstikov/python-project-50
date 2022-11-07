@@ -1,22 +1,21 @@
 '''Comparing the files'''
+from gendiff.modules.parsing import parse_files
 
-import json
+# def generate_diff(file1, file2):
+#    result = ''
+#    with open(file1) as f1:
+#        with open(file2) as f2:
+#            json1 = json.load(f1)
+#            json2 = json.load(f2)
+#            result = '\n'.join(compare_dicts(json1, json2))
+
+#    f1.close()
+#    f2.close()
+#    return result
 
 
 def generate_diff(file1, file2):
-    result = ''
-    with open(file1) as f1:
-        with open(file2) as f2:
-            json1 = json.load(f1)
-            json2 = json.load(f2)
-            result = '\n'.join(compare_dicts(json1, json2))
-
-    f1.close()
-    f2.close()
-    return result
-
-
-def compare_dicts(dict1, dict2):
+    dict1, dict2 = parse_files(file1, file2)
     result = []
     dict1 = check_boolean(dict(sorted(dict1.items())))
     dict2 = check_boolean(dict(sorted(dict2.items())))
@@ -32,6 +31,7 @@ def compare_dicts(dict1, dict2):
     for j in dict2:
         if j not in dict1:
             result.append(f'  + {j}: {dict2[j]}')
+    result = '\n'.join(result)
     return result
 
 
