@@ -1,18 +1,6 @@
 '''Comparing the files'''
 from gendiff.modules.parsing import parse_files
 
-# def generate_diff(file1, file2):
-#    result = ''
-#    with open(file1) as f1:
-#        with open(file2) as f2:
-#            json1 = json.load(f1)
-#            json2 = json.load(f2)
-#            result = '\n'.join(compare_dicts(json1, json2))
-
-#    f1.close()
-#    f2.close()
-#    return result
-
 
 def generate_diff(file1, file2):
     dict1, dict2 = parse_files(file1, file2)
